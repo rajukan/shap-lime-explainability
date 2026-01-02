@@ -82,3 +82,37 @@ Model interpretation can be divided into **Global** and **Local** approaches.
 | Describes how the model works in general | Describes why a specific instance got a prediction |
 | Helps assess deployment suitability | Helps understand individual decisions |
 | Example: Disease risk prediction across all patients | Example: W
+
+
+Local Interpretation
+
+We will discuss the following methods of local interpretation:
+
+    LIME (Local Interpretable Model-agnostic Explanations)
+    SHAP (SHapley Additive exPlanations)
+
+
+LIME (Local Interpretable Model-Agnostic Explanations)
+
+LIME provides a local interpretation by modifying feature values of a single data sample and observing its impact on the output. It builds a surrogate model from the input (sample generation) and model predictions. An interpretable model can be used as a surrogate model. Because LIME is a model agnostic technique, therefore it can be used on any model.
+
+Steps involved in LIME:
+
+    It creates a permutation (fake) of the given data.
+    It calculates the distance between permutations and the original observations. Also, we can specify the distance measured.
+    Then, it makes predictions on the new data using some black-box models.
+    It picks “m” features that describe the complex model. It is an outcome from the permuted data in the best possible way through the maximum likelihood approach. Here, we can decide the number of features i.e. the value of “m” we want to use.
+    It picks the “m” features and fits a simple model to the permuted data with the similarity score as weights.
+    The weights from the simple model are used to provide explanations for the complex model’s local behavior.
+
+SHAP (SHapley Additive exPlanations)
+
+SHAP shows the impact of each feature by interpreting the impact of a certain value compared to a baseline value. The baseline used for prediction is the average of all the predictions. SHAP values allow us to determine any prediction as a sum of the effects of each feature value.
+
+The only disadvantage with SHAP is that the computing time is high. The Shapley values can be combined together and used to perform global interpretations also.
+Global Interpretation
+
+following methods of global interpretation:
+
+    PDP (Partial Dependency Plot)
+    ICE(Individual Conditional Expectation)
