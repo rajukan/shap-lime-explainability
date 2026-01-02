@@ -72,6 +72,9 @@ In deep learning models, it is often unclear how input features combine to produ
 
 ## Ways to Interpret a Model
 
+
+<img width="1295" height="823" alt="image" src="https://github.com/user-attachments/assets/580a8b32-73e8-4700-8369-0024eda9ba0e" />
+
 Model interpretation can be divided into **Global** and **Local** approaches.
 
 ### Global vs Local Interpretation
